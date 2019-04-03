@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+<title>Display Webcam Stream</title>
+  
+<style>
+#container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+    border: red;
+}
+#videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: aquamarine;
+    border: 2px solid blue
+}
+</style>
+</head>
+  
+<body style="background-color:darkslateblue">
+<div id="container">
+    <video autoplay="true" id="videoElement">
+     
+    </video>
+
+
+</div>
+<form>
+        <a type="submit" href="/take_pic" style="color: white;margin-left: 450px;margin-top: 25px" class="button btn btn-info"  style="border-radius:24px;"> click </a>
+</form>
+
+
+<script>
+	var video = document.querySelector("#videoElement");
+ 
+if (navigator.mediaDevices.getUserMedia) {       
+    navigator.mediaDevices.getUserMedia({video: true})
+  .then(function(stream) {
+    video.srcObject = stream;
+  })
+  .catch(function(err0r) {
+    console.log("Something went wrong!");
+  });
+}
+
+ 
+</script>
+
+</body>
+</html>

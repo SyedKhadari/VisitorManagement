@@ -1,0 +1,284 @@
+<head>
+
+	<!--<link rel="stylesheet" type="text/css" href="bootstrap.min.css">-->
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	 crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	 crossorigin="anonymous"></script>
+	 <style text="text/css">
+        .s{
+          border: 0; background: none; text-align: center;
+          border: 2px solid blue;padding: 10px 40px; outline: none;color: white;background-color: blue;
+          border-radius: 24px; transition: 0.25s; cursor: pointer;display: inline-flex
+        }
+        .s:hover{
+          background: rgb(48, 177, 194);color: darkblue
+        }
+      </style>
+
+
+
+
+
+</head>
+
+<body style="background-image:url(water.jpeg);background-size: cover;">
+	<nav class="navbar navbar-expand-lg" style="background-color:powderblue">
+
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item ">
+					<a class="nav-link" href="/admin/admin_page">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/employ_details">Employ Details</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/visitor_details">Visitor Details</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="/admin/add_employ">add employ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/remove_employ">remove employ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/admin/employ_timing">Employ Timing</a>
+				  </li>
+			</ul>
+
+		</div>
+		<a href="/admin/admin_login_form" class="s" class="button"> sign out </a>
+	</nav>
+
+	<div class="container">
+		<div style="background-color: powderblue ;text-align:center;border-radius:20px;margin-top: 25px;">
+			<div>
+				<h1> Employee Registration Form </h1>
+			</div><br>
+
+			<form action="/admin/add_employ" method="post">
+				<div class="form-group row" style="margin-left:80px">
+
+					<label for="name" class="col-sm-2"> First Name: </label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="FirstName" placeholder="Enter First Name" name="firstname" required>
+
+					</div>
+
+
+				</div>
+
+				<div class="form-group row" style="margin-left:80px">
+
+					<label class="col-sm-2"> Last Name: </label>
+					<div class="col-sm-8">
+						<input type="text" id="LastName" class="form-control" placeholder="Enter Last Name" name="lastname" maxlength="20"
+						 required>
+
+					</div>
+
+
+				</div>
+
+
+				<div class="form-group row" style="margin-left:80px">
+
+					<label class="col-sm-2">
+						<i class="fa fa-envelope" aria-hidden="true" style="font-size: 25px"></i>
+					</label>
+					<div class="col-sm-8">
+						<input type="email" id="email" class="form-control" placeholder="Enter Email" name="email" maxlength="30"
+						 required>
+
+					</div>
+
+
+				</div>
+
+
+				<div class="form-group row" style="margin-left:80px">
+
+					<label class="col-sm-2">
+						<i class="fa fa-address-book" aria-hidden="true" style="font-size: 25px;"></i>
+
+					</label>
+					<div class="col-sm-8">
+						<textarea rows="4" id="address" class="form-control" placeholder="Enter Address" name="address" required></textarea>
+					</div>
+
+
+				</div>
+
+				<div class="form-group row" style="margin-left:80px">
+
+					<label class="col-sm-2">
+						<i class="fa fa-phone-square" style="font-size: 25px;"></i>
+
+					</label>
+					<div class="col-sm-8">
+						<input type="text" id="phone" class="form-control" placeholder="Enter Phone Number" name="phone" required>
+
+					</div>
+
+
+				</div>
+
+				<div class="form-group" style="margin-left:80px">
+
+					<label class="col-sm-1"> Gender: </label>
+
+					<select id="gender" name="gender">
+						<option value=""></option>
+						<option value="Male"> Male </option>
+						<option value="Female"> Female </option>
+						<option value="others">others</option>
+					</select>
+					<label class="col-sm-5"><input type="checkbox" name="terms" id="terms"> Terms and Conditions</label>
+				</div>
+
+
+				<div class="row" style="margin-left:450px;padding-bottom: 20px">
+
+					<div >
+						<button onclick="validation()" type="submit" class="btn btn-info">submit </button>
+					</div>
+
+					<div class="col-sm-1">
+						<a href="/admin/add_employ" class="btn btn-info" style="color:white">Reset</a> 
+
+					</div>
+
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+</body>
+
+<script>
+
+
+	function validation() {
+
+		var firstname = document.getElementById("FirstName");
+		var lastname = document.getElementById("LastName");
+
+		var email = document.getElementById("email");
+		var address = document.getElementById("address");
+		var checkbox = document.getElementsByName("checkbox");
+		var phone = document.getElementById("phone");
+		var gender = document.getElementById("gender");
+
+
+
+		var regex = /^[a-zA-Z\. ]+$/;
+		var regex2 = /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;
+
+		var regex1 = /^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/;
+
+
+
+		/*alert("Successful");
+		alert(firstname.value);*/
+
+		if (regex.test(firstname.value) == false) {
+
+
+			alert("Enter First Name ");
+
+			firstname.focus();
+			return false;
+		}
+
+		else if (firstname.value.length > 20) {
+			alert("characters are beyond the length");
+
+		}
+
+		else if (regex.test(lastname.value) == false) {
+
+
+			lastname.focus();
+			alert("Enter Last Name");
+
+			return false;
+		}
+
+		else if (lastname.value.length > 10) {
+			alert("");
+		}
+
+
+
+
+
+		else if (regex2.test(email.value) == false) {
+
+			email.focus();
+			alert("Enter Email");
+			return false;
+		}
+
+		else if (email.value.length > 30) {
+			alert("characters are beyond the length");
+		}
+
+		else if (address.value == "") {
+
+			address.focus();
+			alert("Enter Address ");
+			return false;
+
+		}
+
+		else if (address.value.length > 230) {
+			alert("characters are beyond the length");
+		}
+
+		else if (regex1.test(phone.value) == false) {
+
+
+			phone.focus();
+			alert("Enter Phone Number");
+			return false;
+		}
+
+		else if (phone.value == "") {
+			alert("hhh");
+
+
+		}
+
+		else if (gender.value == "") {
+			alert("select the gender");
+
+
+
+			return false;
+		}
+
+
+
+
+
+
+		else if (terms.checked == false) {
+			alert('tick mark the checkbox');
+			return false;
+		}
+
+	}
+
+</script>
+
+</html>

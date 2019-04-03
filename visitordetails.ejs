@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Visitor Details</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <style text="text/css">
+          .s{
+            border: 0; background: none; text-align: center;
+            border: 2px solid blue;padding: 10px 40px; outline: none;color: white;background-color: blue;
+            border-radius: 24px; transition: 0.25s; cursor: pointer;display: inline-flex
+          }
+          .s:hover{
+            background: rgb(48, 177, 194);color: darkblue
+          }
+        </style>
+    </head>
+    <body>
+            <nav class="navbar navbar-expand-lg " style="background-color:powderblue">
+            
+                    <div class="collapse navbar-collapse" id="navbarText">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="/admin/admin_page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/employ_details">Employ Details</a>
+                        </li>
+                        <li class="nav-item active">
+                          <a class="nav-link" href="/admin/visitor_details">Visitor Details</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/admin/add_employ">Add Employ</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/admin/remove_employ">Remove Employ</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/admin/employ_timing">Employ Timing</a>
+                        </li>
+                      </ul>
+                      
+                    </div>
+                    <a href="/admin/admin_login_form" class="s" class="button"> sign out </a>
+            </nav>
+
+            <div class="container-fluid">
+                    <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">Purpose</th>
+                                        <th scope="col">Person Name</th>
+                                        <th scope="col">Relationship</th>
+                                        <th scope="col">Company Name</th>
+                                        <th scope="col">Gender</th>
+                                        <th scope="col">Time In</th>
+                                        <th scope="col">Time Out</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                    <% for(var vis of visitors){%>
+                                <tr name="vis">
+                                    
+                                      
+                                           
+                                            <td  <%= vis.name%>> <%=vis.name%> </td>
+                                            <td  <%= vis.email%>> <%=vis.email%> </td>
+                                            <td  <%= vis.phone%>> <%=vis.phone%> </td>
+                                            <td  <%= vis.purpose%>> <%=vis.purpose%> </td>
+                                            <td  <%= vis.personname%>> <%=vis.personname%> </td>
+                                            <td  <%= vis.relationship%>> <%=vis.relationship%> </td>
+                                            <td  <%= vis.companyname%>> <%=vis.companyname%> </td>
+                                            <td  <%= vis.gender%>> <%=vis.gender%> </td>
+                                            <td  <%= vis.time_in%>> <%=vis.time_in%> </td>
+                                            <td  <%= vis.time_out%>> <%=vis.time_out%> </td>
+                                   
+                                    
+                                </tr>  
+                                <%}%>
+                                
+                            </tbody>
+                            
+                        </table>
+            </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,186 @@
+<html lang="eng">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <div class="container" style="background-color: powderblue;margin-top: 50px;border-radius: 30px;text-align: center;font-style: oblique; padding-top: 30px;">
+    <form action="/visitor/visitor_form" method="post">
+      <h3>Fill up the Details</h3><br>
+      <div class="form-group row" style="margin-left:200px">
+
+
+        <label for="name" class="col-sm-2">
+          <i class="fa fa-user-circle" aria-hidden="true" style="font-size:25px"></i>&nbsp;Name:
+        </label>
+        <div class="col-sm-7">
+          <input type="name" class="form-control" id="name" value="" placeholder="Enter the name" name="name">
+
+        </div>
+
+      </div>
+
+      <div class="form-group row" style="margin-left:200px">
+        <label for="email" class="col-sm-2">
+          <i class="fa fa-envelope" aria-hidden="true" style="font-size: 25px"></i>&nbsp; Email:
+        </label>
+        <div class="col-sm-7">
+          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          <span id="two"></span>
+
+        </div>
+      </div>
+
+      <div class="form-group row" style="margin-left:200px">
+        <label for="phone" class="col-sm-2">
+          <i class="fa fa-phone-square" style="font-size: 25px"></i> &nbsp; Phone:
+        </label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="phone" placeholder="Enter Phone" name="phone" >
+          <span id="three"></span>
+        </div>
+      </div>
+
+      <div class="form-group row" style="margin-left:200px">
+        <div class="col-sm-9">
+          <div class="input-group ">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Purpose of your vist:</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01" onchange="but1()" name='purpose'>
+              <option value="0"></option>
+              <option value="To Meet Someone">To Meet Someone</option>
+              <option value="For Company Metting">For Company Metting</option>
+              <option value="Interview">Interview</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="display:none" id="1">
+        <div class="form-group row" style="margin-left:200px">
+          <label class="col-sm-2">Person Name:</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" name="personname">
+          </div>
+        </div>
+        <div class="form-group row" style="margin-left:200px">
+          <label class="col-sm-2">Relationship:</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" name="relationship" >
+          </div>
+        </div>
+      </div>
+
+      <div style="display:none" id="2">
+        <div class="form-group row" style="margin-left:200px">
+          <label class="col-sm-2">Company Name:</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" name="companyname">
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:30px;margin-right:355px;"> Gender:
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+      </div>
+
+      <p name="time_in"> </p>
+
+     
+      <button type="submit" onclick="myFunc()" id="submit" class="btn btn-info" style="margin-top:40px "> submit</button>
+    </form>
+
+  </div>
+</body>
+<script>
+
+  function myFunc() {
+    var name = document.getElementById("name");
+    var email = document.getElementById("email");
+    var phone = document.getElementById("phone");
+    var gender = document.getElementsByName("gender");
+
+
+    var regex = /^[a-zA-Z\.]+$/;
+
+
+    if (regex.test(name.value) == false) {
+      name.focus()
+
+      alert("please enter your name:");
+
+      return false;
+    }
+    if (name.value.length > 20) {
+      alert("name must be 20 letters");
+      return false;
+    }
+
+    if (email.value == "") {
+      alert("please enter your email");
+
+      return false;
+    }
+
+
+    if (phone.value == "") {
+      alert("please enter your phone");
+
+      return false;
+    }
+
+
+    if (gender[0].checked == false && gender[1].checked == false) {
+      alert("select the gender");
+
+      return false;
+    }
+
+    {
+      alert("success");
+    }
+    return true;
+  }
+
+  function but1() {
+    var s = document.getElementById("inputGroupSelect01");
+    var m = document.getElementById('1');
+    var n = document.getElementById('2');
+
+    if (s.value == "0") {
+      m.style.display = "none";
+      n.style.display = "none";
+    }
+    if (s.value == "To Meet Someone") {
+      m.style.display = "block";
+      n.style.display = "none";
+    }
+    if (s.value == "For Company Metting") {
+      m.style.display = "none";
+      n.style.display = "block";
+    }
+    if (s.value == "Interview") {
+      m.style.display = "none";
+      n.style.display = "none";
+    }
+  }
+</script>
+
+</html>
